@@ -1,55 +1,43 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2758
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Monaco;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue255;\red255\green255\blue254;\red19\green118\blue70;
-\red15\green112\blue1;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c100000;\cssrgb\c100000\c100000\c99608;\cssrgb\c3529\c52549\c34510;
-\cssrgb\c0\c50196\c0;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+actor Calculator {
 
-\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
-actor\cf0  Calculator \{\cb1 \
-\
-\cb3   \cf2 var\cf0  result : \cf2 Float\cf0  = \cf4 0\cf0 ;\cb1 \
-\
-\cb3   \cf5 // Addition\cf0 \cb1 \
-\cb3   \cf2 public\cf0  \cf2 func\cf0  add(x : \cf2 Float\cf0 , y : \cf2 Float\cf0 ) : \cf2 async\cf0  \cf2 Float\cf0  \{\cb1 \
-\cb3     result := x + y;\cb1 \
-\cb3     result\cb1 \
-\cb3   \};\cb1 \
-\
-\cb3   \cf5 // Subtraction\cf0 \cb1 \
-\cb3   \cf2 public\cf0  \cf2 func\cf0  subtract(x : \cf2 Float\cf0 , y : \cf2 Float\cf0 ) : \cf2 async\cf0  \cf2 Float\cf0  \{\cb1 \
-\cb3     result := x - y;\cb1 \
-\cb3     result\cb1 \
-\cb3   \};\cb1 \
-\
-\cb3   \cf5 // Multiplication\cf0 \cb1 \
-\cb3   \cf2 public\cf0  \cf2 func\cf0  multiply(x : \cf2 Float\cf0 , y : \cf2 Float\cf0 ) : \cf2 async\cf0  \cf2 Float\cf0  \{\cb1 \
-\cb3     result := x * y;\cb1 \
-\cb3     result\cb1 \
-\cb3   \};\cb1 \
-\
-\cb3   \cf5 // Division\cf0 \cb1 \
-\cb3   \cf2 public\cf0  \cf2 func\cf0  divide(x : \cf2 Float\cf0 , y : \cf2 Float\cf0 ) : \cf2 async\cf0  ?\cf2 Float\cf0  \{\cb1 \
-\cb3     \cf2 if\cf0  (y != \cf4 0\cf0 ) \{\cb1 \
-\cb3       result := x / y;\cb1 \
-\cb3       ?result\cb1 \
-\cb3     \} \cf2 else\cf0  \{\cb1 \
-\cb3       \cf2 null\cf0 \cb1 \
-\cb3     \}\cb1 \
-\cb3   \};\cb1 \
-\
-\cb3   \cf5 // Reset the result\cf0 \cb1 \
-\cb3   \cf2 public\cf0  \cf2 func\cf0  reset() : \cf2 async\cf0  () \{\cb1 \
-\cb3     result := \cf4 0\cf0 \cb1 \
-\cb3   \};\cb1 \
-\
-\cb3   \cf5 // Show the current result\cf0 \cb1 \
-\cb3   \cf2 public\cf0  \cf2 func\cf0  getResult() : \cf2 async\cf0  \cf2 Float\cf0  \{\cb1 \
-\cb3     result\cb1 \
-\cb3   \}\cb1 \
-\cb3 \}\cb1 \
-\
+  var result : Float = 0;
+
+  // Addition
+  public func add(x : Float, y : Float) : async Float {
+    result := x + y;
+    result
+  };
+
+  // Subtraction
+  public func subtract(x : Float, y : Float) : async Float {
+    result := x - y;
+    result
+  };
+
+  // Multiplication
+  public func multiply(x : Float, y : Float) : async Float {
+    result := x * y;
+    result
+  };
+
+  // Division
+  public func divide(x : Float, y : Float) : async ?Float {
+    if (y != 0) {
+      result := x / y;
+      ?result
+    } else {
+      null
+    }
+  };
+
+  // Reset the result
+  public func reset() : async () {
+    result := 0
+  };
+
+  // Show the current result
+  public func getResult() : async Float {
+    result
+  }
 }
+
